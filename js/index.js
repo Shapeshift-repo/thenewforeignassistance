@@ -384,33 +384,3 @@ function initGrowthChart() {
     }
   });
 })();
-
-/* Desktop: section side accents travel down the left margin as you scroll,
-   like a finger keeping your place, staying within their own section. */
-(function () {
-  var accents = [].slice.call(document.querySelectorAll('.follow-accent'));
-  if (!accents.length) return;
-  var mq = window.matchMedia('(min-width: 860px)');
-  var header = document.getElementById('siteHeader');
-  var GAP = 40, BOTTOM_PAD = 60, ticking = false;
-  function update() {
-    ticking = false;
-    var on = mq.matches;
-    var topLine = (header ? header.getBoundingClientRect().bottom : 0) + GAP;
-    accents.forEach(function (a) {
-      if (!on) { a.style.transform = ''; return; }
-      var sec = a.offsetParent;
-      if (!sec) return;
-      var base = a.offsetTop; // layout position, unaffected by transform
-      var secTop = sec.getBoundingClientRect().top;
-      var max = Math.max(0, sec.offsetHeight - base - a.offsetHeight - BOTTOM_PAD);
-      var y = Math.min(max, Math.max(0, topLine - (secTop + base)));
-      a.style.transform = y ? 'translateY(' + Math.round(y) + 'px)' : '';
-    });
-  }
-  function request() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
-  window.addEventListener('scroll', request, { passive: true });
-  window.addEventListener('resize', request);
-  if (mq.addEventListener) mq.addEventListener('change', request);
-  update();
-})();
