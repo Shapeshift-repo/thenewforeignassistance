@@ -92,7 +92,7 @@
     .friedman-quote__name { white-space: nowrap; font-family: Newsreader, Georgia, serif; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: #b8682a; }
     .friedman-quote__src { font-size: 15px; color: #4a5a72; }
     @media (min-width: 860px) { .friedman-quote__name { font-size: 14px; letter-spacing: .14em; } .friedman-quote { max-width: 440px; gap: 24px; } .friedman-quote__photo { width: 182px; } .friedman-quote blockquote { font-size: 23px; } }
-    @media (min-width: 860px) { .friedman-quote--center { flex: none; width: 100%; max-width: 660px; margin: -54px auto -54px; } }
+    @media (min-width: 860px) { .friedman-row { margin: -54px 0; } .friedman-quote--center { grid-column: 2; justify-self: center; flex: none; width: 560px; max-width: calc(100% + 64px); margin: 0; } }
     /* India night-lights band */
     .india-band { background: #0a1220; color: #fff; padding: 72px 40px 56px; }
     .india-band__inner { max-width: 1192px; margin: 0 auto; }
@@ -275,13 +275,15 @@
       </div>
     </div>
 
-      <figure class="friedman-quote friedman-quote--center">
-        <div class="friedman-quote__photo"><img src="images/friedman-tall-260.webp" srcset="images/friedman-tall-260.webp 260w, images/friedman-tall-520.webp 520w" sizes="(min-width: 860px) 182px, 128px" alt="Milton Friedman" width="260" height="455" loading="lazy" decoding="async"></div>
-        <div class="friedman-quote__body">
-          <blockquote>&ldquo;One of the great mistakes is to judge policies and programs by their intentions rather than their results.&rdquo;</blockquote>
-          <figcaption><span class="friedman-quote__name">Milton Friedman</span><span class="friedman-quote__src"><em>The Open Mind</em>, 1975</span></figcaption>
-        </div>
-      </figure>
+    <div class="friedman-row grid tablet:grid-cols-2 tablet:gap-16 tablet:px-15">
+        <figure class="friedman-quote friedman-quote--center">
+          <div class="friedman-quote__photo"><img src="images/friedman-tall-260.webp" srcset="images/friedman-tall-260.webp 260w, images/friedman-tall-520.webp 520w" sizes="(min-width: 860px) 182px, 128px" alt="Milton Friedman" width="260" height="455" loading="lazy" decoding="async"></div>
+          <div class="friedman-quote__body">
+            <blockquote>&ldquo;One of the great mistakes is to judge policies and programs by their intentions rather than their results.&rdquo;</blockquote>
+            <figcaption><span class="friedman-quote__name">Milton Friedman</span><span class="friedman-quote__src"><em>The Open Mind</em>, 1975</span></figcaption>
+          </div>
+        </figure>
+    </div>
     <div class="grid gap-10 tablet:grid-cols-2 tablet:gap-16 tablet:px-15">
       <div class="flex flex-col gap-2.5">
         <p class="font-newsreader text-[22px] text-ink">What went wrong</p>
