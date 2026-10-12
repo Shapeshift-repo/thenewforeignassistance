@@ -67,6 +67,18 @@
     @media (min-width: 860px) { .hero-school-img { aspect-ratio:3/2; height:auto; max-height:683px; object-position:40% center; transform:none; } }
     .hero-photo-caption { font-size: 13px; line-height: 1.45; color: #5a6880; margin: 8px 40px 0; }
     @media (min-width: 860px) { .hero-photo-caption { margin: 10px 60px 0 0; } }
+    /* Desktop: taller hero photo so the right column isn't empty beside the intro text; tighter gap to The Record */
+    /* Desktop: photo stretches to the height of the hero text so the right column has no dead space; tighter gap to The Record */
+    @media (min-width: 860px) {
+      .hero-photo-col { align-self: stretch; display: flex; flex-direction: column; padding-bottom: 56px; }
+      .hero-photo-frame { flex: 1 1 auto; min-height: 320px; }
+      .hero-photo-frame .hero-school-img { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; aspect-ratio: auto; object-fit: cover; object-position: 38% center; }
+      #page-hero .hero-text-col { padding-bottom: 56px !important; }
+      #the-record { padding-top: 96px !important; }
+      /* Keep "Built to End." on one line at every laptop width */
+      .hero-h1 { font-size: clamp(44px, calc((50vw - 166px) / 5.9), 72px); }
+    }
+    @media (min-width: 1280px) { .hero-h1 { font-size: clamp(60px, calc((50vw - 166px) / 5.9), 92px) !important; } }
     /* Hero heading restored to original scale (pre night-lights) */
     .hero-h1 { font-size: 42px; line-height: 1.1; }
     @media (min-width: 860px) { .hero-h1 { font-size: 72px; line-height: 1.15; } .hero-body { font-size: 22px; line-height: 33px; } }
@@ -154,7 +166,7 @@
 <section id="page-hero">
   <div class="mx-auto grid min-w-0 items-start gap-8 tablet:grid-cols-2 tablet:gap-16">
     <div class="hero-photo-col relative order-2 min-w-0 overflow-hidden fade-up tablet:order-2">
-      <div class="relative overflow-hidden">
+      <div class="hero-photo-frame relative overflow-hidden">
         <img src="images/hero-school.webp" alt="Girls with U.S. and Kenyan flags waiting to greet the U.S. ambassador at a PEPFAR girls' empowerment project in Nairobi" class="hero-school-img" width="1024" height="683" fetchpriority="high">
         <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 hidden tablet:block" style="width:180px;height:96px;max-width:none">
       </div>
