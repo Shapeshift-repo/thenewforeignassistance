@@ -69,6 +69,11 @@
     @media (min-width: 860px) { .hero-photo-caption { margin: 10px 60px 0 0; } }
     /* Desktop: tighter gap between hero and The Record (photo unchanged) */
     @media (min-width: 860px) { #page-hero .hero-text-col { padding-bottom: 56px !important; } #the-record { padding-top: 96px !important; } }
+    /* Desktop: hero buttons side by side where they fit */
+    @media (min-width: 1360px) {
+      #page-hero .hero-body + div { flex-wrap: nowrap; }
+      #page-hero .hero-body + div a { width: auto; flex: none; padding-left: 20px; padding-right: 20px; letter-spacing: .15em; }
+    }
     /* Hero heading restored to original scale (pre night-lights) */
     .hero-h1 { font-size: 42px; line-height: 1.1; }
     @media (min-width: 860px) { .hero-h1 { font-size: 72px; line-height: 1.15; } .hero-body { font-size: 22px; line-height: 33px; } }
