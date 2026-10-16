@@ -114,9 +114,10 @@
   @media (min-width: 860px) {
     .hero-grid {
       grid-template-columns: minmax(0, 1fr) auto;
+      align-items: start;
       padding-right: 32px;
     }
-    /* Photo column scales with the viewport until 1280px, then caps at 614px. */
+    /* Same sticky pattern as #principles aside (BugHerd #28): pin while the text column scrolls. */
     .hero-media {
       width: 44vw;
     }

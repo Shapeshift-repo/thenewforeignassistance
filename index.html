@@ -45,7 +45,7 @@
   <style>
     /* Keep newsletter headline on one line on wide screens */
     @media (min-width: 1280px) { .nl-oneline { white-space: nowrap; } }
-    /* Hero text column is centered against the hero photo by the grid (tablet:items-center). */
+    /* Hero: headline scrolls while the photo stays sticky (BugHerd #28), same pattern as #principles. */
     /* Balanced wrapping: no one- or two-word orphan lines */
     .balance-wrap { text-wrap: balance; }
     /* Footer legal line: break only between org and address on desktop; org / street / city on mobile */
@@ -110,12 +110,8 @@
 
 <!-- HERO -->
 <section id="page-hero">
-  <div class="hero-grid mx-auto grid min-w-0 items-start gap-8 tablet:items-center tablet:gap-12">
-    <div class="hero-media relative order-1 min-w-0 overflow-hidden tablet:order-2">
-      <img src="images/hero-school.webp" alt="Schoolchildren holding flags outdoors" class="hero-school-img" width="1024" height="683" fetchpriority="high">
-      <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 hidden tablet:block" style="width:180px;height:96px;max-width:none">
-    </div>
-    <div class="hero-text-col order-2 flex min-w-0 flex-col gap-6 px-10 fade-up tablet:order-1 tablet:px-0 tablet:pl-[126px] tablet:py-4">
+  <div class="hero-grid mx-auto grid min-w-0 items-start gap-8 tablet:gap-12 fade-up">
+    <div class="hero-text-col order-2 flex min-w-0 flex-col gap-6 px-10 tablet:order-1 tablet:px-0 tablet:pl-[126px] tablet:py-4">
       <h1 class="display-heading text-ink">
         <span class="block">Ambitious.</span>
         <span class="block">Effective.</span>
@@ -126,11 +122,17 @@
         <p>For those of us who support foreign assistance, it is tempting to bring back what USAID was. That&#39;s not good enough.</p>
         <p>It&#39;s time for what comes next. The New Foreign Assistance is the conservative voice for reform.</p>
       </div>
-      <div class="flex w-full flex-col gap-3 tablet:max-w-none tablet:flex-row tablet:flex-wrap tablet:items-center">
+      <div class="hero-actions flex w-full flex-col gap-3 tablet:max-w-none tablet:flex-row tablet:flex-wrap tablet:items-center">
         <a href="framework.html" class="btn-filled w-full">Read the framework</a>
         <a href="tracker.html" class="btn-outline w-full">Open the tracker <span class=" hidden tablet:inline">→</span></a>
       </div>
     </div>
+    <aside class="hero-media-track order-1 min-w-0 tablet:sticky tablet:top-[12.5rem] tablet:order-2 tablet:self-start">
+      <div class="hero-media relative overflow-hidden">
+        <img src="images/hero-school.webp" alt="Schoolchildren holding flags outdoors" class="hero-school-img" width="1024" height="683" fetchpriority="high">
+        <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 hidden tablet:block" style="width:180px;height:96px;max-width:none">
+      </div>
+    </aside>
   </div>
 </section>
 
