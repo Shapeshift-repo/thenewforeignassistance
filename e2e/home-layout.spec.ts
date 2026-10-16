@@ -124,6 +124,10 @@ for (const vp of viewports) {
       await expect(heroPhoto).toHaveAttribute('src', 'images/hero-school.webp');
       await expect(page.locator('#page-hero figure')).toHaveCount(0);
       await expect(page.locator('#page-hero video')).toHaveCount(0);
+      if (isTablet(vp.width)) {
+        const heroTrack = page.locator('#page-hero .hero-media-track');
+        await expect(heroTrack).toHaveCSS('position', 'sticky');
+      }
 
       // --- India pair (BugHerd #19), now below The Diagnosis and above Reformed Approach (BugHerd #27) ---
       const india = page.locator('#india');
