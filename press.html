@@ -554,7 +554,7 @@
 
 <!-- PAGE INTRO -->
 <section class="page-intro" style="position:relative;overflow:hidden">
-  <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 intro-stripes" style="width:180px;height:96px;max-width:none;z-index:5">
+  <img src="images/decor-bars-right.svg" alt="" aria-hidden="true" width="79" height="232" class="pointer-events-none absolute right-0 intro-stripes" style="top:50%;transform:translateY(-50%);width:79px;height:232px;max-width:none;z-index:5">
   <div class="page-intro-inner fade-up">
     <h1 class="page-h1">What we've written.<br><em>What we're reading.</em></h1>
     <p class="page-lead">Our own writing, coverage of our work, and the reading that informs it.</p>
@@ -765,7 +765,7 @@
 <script>
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: 0.07 });
+}, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
 (function() {

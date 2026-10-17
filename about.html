@@ -247,7 +247,8 @@
     font-size: 20px;
     line-height: 1.7;
     color: var(--ink-light);
-    max-width: 720px;
+    max-width: 960px;
+    text-wrap: balance;
     margin-bottom: 48px;
   }
   .advisor-grid { margin-bottom: 40px; }
@@ -837,7 +838,7 @@
 
 <!-- PAGE INTRO -->
 <section class="page-intro" style="position:relative;overflow:hidden">
-  <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 intro-stripes" style="width:180px;height:96px;max-width:none;z-index:5">
+  <img src="images/decor-bars-right.svg" alt="" aria-hidden="true" width="79" height="232" class="pointer-events-none absolute right-0 intro-stripes" style="top:50%;transform:translateY(-50%);width:79px;height:232px;max-width:none;z-index:5">
   <div class="page-intro-inner fade-up">
     <h1 class="page-h1">Building <em>what comes next</em></h1>
     <p class="page-lead">The operating team, the board, and the senior advisors who guide the work.</p>
@@ -861,36 +862,6 @@
     <div class="board-block">
       <h2>Leadership</h2>
       <div class="person-grid board-grid">
-        <button type="button" class="flip-card">
-          <div class="flip-card-inner">
-            <div class="person-card flip-card-front">
-              <img src="images/randy-tift.webp" alt="Randy Tift" class="person-photo leader-photo" loading="lazy">
-              <div class="board-text">
-                <div class="board-name">Randy Tift</div>
-                <div class="board-role">Board<br><span class="board-role-sub">Senior Advisor, Accord Network; Head of Transformation, Trump I USAID</span></div>
-              </div>
-            </div>
-            <div class="flip-card-back">
-              <div class="flip-back-name">Randy Tift</div>
-              <p class="flip-back-bio">Three decades in international development across strategy, policy, operations, and innovation, for both U.S. Government and non-governmental partners. A senior Trump administration appointee at USAID, and previously Senior Policy Director at World Vision in Washington, DC. Led field-based U.S. foreign assistance programs for over a decade. Currently senior advisor to the Accord Network, an association of nearly 170 Christian relief and development organizations working globally.</p>
-            </div>
-          </div>
-        </button>
-        <button type="button" class="flip-card">
-          <div class="flip-card-inner">
-            <div class="person-card flip-card-front">
-              <img src="images/parth-ahya.webp" alt="Parth Ahya" class="person-photo leader-photo" loading="lazy">
-              <div class="board-text">
-                <div class="board-name">Parth Ahya</div>
-                <div class="board-role">Board<br><span class="board-role-sub">Program Director, Renaissance Philanthropy</span></div>
-              </div>
-            </div>
-            <div class="flip-card-back">
-              <div class="flip-back-name">Parth Ahya</div>
-              <p class="flip-back-bio">Program Director at Renaissance Philanthropy, where he advises major donors on their philanthropic giving. Previously managed a portfolio of grantmaking programs at Schmidt Futures, a philanthropic initiative of former Google CEO Eric Schmidt and Wendy Schmidt. Prior to that, founded and led Taimaka, a nonprofit treating acute malnutrition in children and developing new approaches to treatment. BA in Philosophy and Theology with First Class Honours from the University of Oxford. Fellow of the Royal Society of the Arts and Interact.</p>
-            </div>
-          </div>
-        </button>
         <button type="button" class="flip-card">
           <div class="flip-card-inner">
             <div class="person-card flip-card-front">
@@ -921,11 +892,42 @@
             </div>
           </div>
         </button>
+        <button type="button" class="flip-card">
+          <div class="flip-card-inner">
+            <div class="person-card flip-card-front">
+              <img src="images/parth-ahya.webp" alt="Parth Ahya" class="person-photo leader-photo" loading="lazy">
+              <div class="board-text">
+                <div class="board-name">Parth Ahya</div>
+                <div class="board-role">Board<br><span class="board-role-sub">Program Director, Renaissance Philanthropy</span></div>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-back-name">Parth Ahya</div>
+              <p class="flip-back-bio">Program Director at Renaissance Philanthropy, where he advises major donors on their philanthropic giving. Previously managed a portfolio of grantmaking programs at Schmidt Futures, a philanthropic initiative of former Google CEO Eric Schmidt and Wendy Schmidt. Prior to that, founded and led Taimaka, a nonprofit treating acute malnutrition in children and developing new approaches to treatment. BA in Philosophy and Theology with First Class Honours from the University of Oxford. Fellow of the Royal Society of the Arts and Interact.</p>
+            </div>
+          </div>
+        </button>
+        <button type="button" class="flip-card">
+          <div class="flip-card-inner">
+            <div class="person-card flip-card-front">
+              <img src="images/randy-tift.webp" alt="Randy Tift" class="person-photo leader-photo" loading="lazy">
+              <div class="board-text">
+                <div class="board-name">Randy Tift</div>
+                <div class="board-role">Board<br><span class="board-role-sub">Senior Advisor, Accord Network; Head of Transformation, Trump I USAID</span></div>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <div class="flip-back-name">Randy Tift</div>
+              <p class="flip-back-bio">Three decades in international development across strategy, policy, operations, and innovation, for both U.S. Government and non-governmental partners. A senior Trump administration appointee at USAID, and previously Senior Policy Director at World Vision in Washington, DC. Led field-based U.S. foreign assistance programs for over a decade. Currently senior advisor to the Accord Network, an association of nearly 170 Christian relief and development organizations working globally.</p>
+            </div>
+          </div>
+        </button>
         </div>
     </div>
 
     <div class="board-block" id="team">
       <h2>Team</h2>
+      <!-- Order: Executive Director first, then everyone else alphabetical by first name. Leadership and Advisory Council: alphabetical by first name. -->
       <div class="person-grid board-grid">
         <button type="button" class="flip-card">
           <div class="flip-card-inner">
@@ -980,90 +982,90 @@
     <p class="advisory-intro">Senior policymakers, scholars, and practitioners who advise the work. Click any name for a bio.</p>
     <div class="person-grid advisor-grid">
 
-      <button class="person-card advisor-card" data-advisor="brearley" type="button">
-        <div class="person-photo advisor-avatar"><img src="images/emily-brearley.webp" alt="Emily Brearley" loading="lazy"></div>
-        <div class="advisor-name">Emily Brearley</div>
-        <div class="advisor-affil">Economist; founder, Solution42.Org; former World Bank and IDB</div>
+      <button class="person-card advisor-card" data-advisor="steiger" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/bill-steiger.webp" alt="Bill Steiger" loading="lazy"></div>
+        <div class="advisor-name">Bill Steiger</div>
+        <div class="advisor-affil">CEO, Malaria No More; former Chief of Staff, USAID</div>
       </button>
-      <button class="person-card advisor-card" data-advisor="burks" type="button">
-        <div class="person-photo advisor-avatar"><img src="images/jonathan-burks.webp" alt="Jonathan Burks" loading="lazy"></div>
-        <div class="advisor-name">Jonathan Burks</div>
-        <div class="advisor-affil">Executive Vice President, Bipartisan Policy Center; former Chief of Staff to Speaker Paul Ryan</div>
-      </button>
-      <button class="person-card advisor-card" data-advisor="cavallorunde" type="button">
-        <div class="person-photo advisor-avatar"><img src="images/sonia-cavallo-runde.webp" alt="Sonia Cavallo Runde" loading="lazy"></div>
-        <div class="advisor-name">Sonia Cavallo Runde</div>
-        <div class="advisor-affil">Former Argentine Ambassador to the OAS</div>
+      <button class="person-card advisor-card" data-advisor="wydick" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/bruce-wydick.webp" alt="Bruce Wydick" loading="lazy"></div>
+        <div class="advisor-name">Bruce Wydick</div>
+        <div class="advisor-affil">Author of <em>Shrewd Samaritan</em>; Prof. of Economics, Univ. of San Francisco</div>
       </button>
       <button class="person-card advisor-card" data-advisor="coyne" type="button">
         <div class="person-photo advisor-avatar"><img src="images/chris-coyne.webp" alt="Chris Coyne" loading="lazy"></div>
         <div class="advisor-name">Chris Coyne</div>
         <div class="advisor-affil">Prof. Chris Coyne, Author of <em>Doing Bad by Doing Good: Why Humanitarian Action Fails</em></div>
       </button>
-      <button class="person-card advisor-card" data-advisor="dookhony" type="button">
-        <div class="person-photo advisor-avatar"><img src="images/manisha-dookhony.webp" alt="Manisha Dookhony" loading="lazy"></div>
-        <div class="advisor-name">Manisha Dookhony</div>
-        <div class="advisor-affil">CEO and co-founder, Terramont Capital Partners</div>
-      </button>
-      <button class="person-card advisor-card" data-advisor="gallenstein" type="button">
-        <div class="person-photo advisor-avatar"><img src="images/tony-gallenstein.webp" alt="Tony Gallenstein" loading="lazy"></div>
-        <div class="advisor-name">Tony Gallenstein</div>
-        <div class="advisor-affil">Professor of Economics and Public Policy, Catholic Univ.</div>
-      </button>
-      <button class="person-card advisor-card" data-advisor="mazzarella" type="button">
-        <div class="person-photo advisor-avatar"><img src="images/jim-mazzarella.webp" alt="Jim Mazzarella" loading="lazy"></div>
-        <div class="advisor-name">Jim Mazzarella</div>
-        <div class="advisor-affil">Senior Director, Freedom and Prosperity Center, Atlantic Council</div>
-      </button>
-      <button class="person-card advisor-card" data-advisor="murry" type="button">
-        <div class="person-photo advisor-avatar"><img src="images/luke-murry.webp" alt="Luke Murry" loading="lazy"></div>
-        <div class="advisor-name">Luke Murry</div>
-        <div class="advisor-affil">Head of Government Affairs, Marvell; architect of the Foreign Aid Transparency and Accountability Act</div>
-      </button>
-      <button class="person-card advisor-card" data-advisor="mowers" type="button">
-        <div class="person-photo advisor-avatar"><img src="images/matt-mowers.webp" alt="Matt Mowers" loading="lazy"></div>
-        <div class="advisor-name">Matt Mowers</div>
-        <div class="advisor-affil">President, Valcour; former White House Advisor; Chief Policy Officer for PEPFAR</div>
-      </button>
-      <button class="person-card advisor-card" data-advisor="nagy" type="button">
-        <div class="person-photo advisor-avatar"><img src="images/tibor-nagy.webp" alt="Tibor Nagy" loading="lazy"></div>
-        <div class="advisor-name">Amb. Tibor Nagy</div>
-        <div class="advisor-affil">Former Asst. Secretary of State for African Affairs</div>
-      </button>
-      <button class="person-card advisor-card" data-advisor="pritchett" type="button">
-        <div class="person-photo advisor-avatar"><img src="images/lant-pritchett.webp" alt="Lant Pritchett" loading="lazy"></div>
-        <div class="advisor-name">Lant Pritchett</div>
-        <div class="advisor-affil">Professor of Economics and Practice, London School of Economics</div>
-      </button>
       <button class="person-card advisor-card" data-advisor="runde" type="button">
         <div class="person-photo advisor-avatar"><img src="images/dan-runde.webp" alt="Dan Runde" loading="lazy"></div>
         <div class="advisor-name">Dan Runde</div>
         <div class="advisor-affil">Author of <em>The American Imperative</em></div>
       </button>
-      <button class="person-card advisor-card" data-advisor="soule" type="button">
-        <div class="person-photo advisor-avatar"><img src="images/nate-soule.webp" alt="Nate Soule" loading="lazy"></div>
-        <div class="advisor-name">Nate Soule</div>
-        <div class="advisor-affil">Executive Director, Campaign for America First International Assistance</div>
-      </button>
-      <button class="person-card advisor-card" data-advisor="steiger" type="button">
-        <div class="person-photo advisor-avatar"><img src="images/bill-steiger.webp" alt="Bill Steiger" loading="lazy"></div>
-        <div class="advisor-name">Bill Steiger</div>
-        <div class="advisor-affil">CEO, Malaria No More; former Chief of Staff, USAID</div>
+      <button class="person-card advisor-card" data-advisor="brearley" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/emily-brearley.webp" alt="Emily Brearley" loading="lazy"></div>
+        <div class="advisor-name">Emily Brearley</div>
+        <div class="advisor-affil">Economist; founder, Solution42.Org; former World Bank and IDB</div>
       </button>
       <button class="person-card advisor-card" data-advisor="tomory" type="button">
         <div class="person-photo advisor-avatar"><img src="images/hanna-tomory.webp" alt="Hanna Tomory" loading="lazy"></div>
         <div class="advisor-name">Hanna Tomory</div>
         <div class="advisor-affil">CEO, Kalandjai</div>
       </button>
+      <button class="person-card advisor-card" data-advisor="mazzarella" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/jim-mazzarella.webp" alt="Jim Mazzarella" loading="lazy"></div>
+        <div class="advisor-name">Jim Mazzarella</div>
+        <div class="advisor-affil">Senior Director, Freedom and Prosperity Center, Atlantic Council</div>
+      </button>
+      <button class="person-card advisor-card" data-advisor="burks" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/jonathan-burks.webp" alt="Jonathan Burks" loading="lazy"></div>
+        <div class="advisor-name">Jonathan Burks</div>
+        <div class="advisor-affil">Executive Vice President, Bipartisan Policy Center; former Chief of Staff to Speaker Paul Ryan</div>
+      </button>
+      <button class="person-card advisor-card" data-advisor="pritchett" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/lant-pritchett.webp" alt="Lant Pritchett" loading="lazy"></div>
+        <div class="advisor-name">Lant Pritchett</div>
+        <div class="advisor-affil">Professor of Economics and Practice, London School of Economics</div>
+      </button>
+      <button class="person-card advisor-card" data-advisor="murry" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/luke-murry.webp" alt="Luke Murry" loading="lazy"></div>
+        <div class="advisor-name">Luke Murry</div>
+        <div class="advisor-affil">Head of Government Affairs, Marvell; architect of the Foreign Aid Transparency and Accountability Act</div>
+      </button>
       <button class="person-card advisor-card" data-advisor="wade" type="button">
         <div class="person-photo advisor-avatar"><img src="images/magatte-wade.webp" alt="Magatte Wade" loading="lazy"></div>
         <div class="advisor-name">Magatte Wade</div>
         <div class="advisor-affil">Author of <em>The Heart of a Cheetah</em>; Senior Fellow, Atlas Network</div>
       </button>
-      <button class="person-card advisor-card" data-advisor="wydick" type="button">
-        <div class="person-photo advisor-avatar"><img src="images/bruce-wydick.webp" alt="Bruce Wydick" loading="lazy"></div>
-        <div class="advisor-name">Bruce Wydick</div>
-        <div class="advisor-affil">Author of <em>Shrewd Samaritan</em>; Prof. of Economics, Univ. of San Francisco</div>
+      <button class="person-card advisor-card" data-advisor="dookhony" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/manisha-dookhony.webp" alt="Manisha Dookhony" loading="lazy"></div>
+        <div class="advisor-name">Manisha Dookhony</div>
+        <div class="advisor-affil">CEO and co-founder, Terramont Capital Partners</div>
+      </button>
+      <button class="person-card advisor-card" data-advisor="mowers" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/matt-mowers.webp" alt="Matt Mowers" loading="lazy"></div>
+        <div class="advisor-name">Matt Mowers</div>
+        <div class="advisor-affil">President, Valcour; former White House Advisor; Chief Policy Officer for PEPFAR</div>
+      </button>
+      <button class="person-card advisor-card" data-advisor="soule" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/nate-soule.webp" alt="Nate Soule" loading="lazy"></div>
+        <div class="advisor-name">Nate Soule</div>
+        <div class="advisor-affil">Executive Director, Campaign for America First International Assistance</div>
+      </button>
+      <button class="person-card advisor-card" data-advisor="cavallorunde" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/sonia-cavallo-runde.webp" alt="Sonia Cavallo Runde" loading="lazy"></div>
+        <div class="advisor-name">Sonia Cavallo Runde</div>
+        <div class="advisor-affil">Former Argentine Ambassador to the OAS</div>
+      </button>
+      <button class="person-card advisor-card" data-advisor="nagy" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/tibor-nagy.webp" alt="Tibor Nagy" loading="lazy"></div>
+        <div class="advisor-name">Amb. Tibor Nagy</div>
+        <div class="advisor-affil">Former Asst. Secretary of State for African Affairs</div>
+      </button>
+      <button class="person-card advisor-card" data-advisor="gallenstein" type="button">
+        <div class="person-photo advisor-avatar"><img src="images/tony-gallenstein.webp" alt="Tony Gallenstein" loading="lazy"></div>
+        <div class="advisor-name">Tony Gallenstein</div>
+        <div class="advisor-affil">Professor of Economics and Public Policy, Catholic Univ.</div>
       </button>
     </div>
     <p class="advisory-footnote">Advisory Council members serve in their personal capacity. Institutional affiliations are for identification only.</p>
@@ -1118,7 +1120,7 @@
 <script>
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: 0.07 });
+}, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
 (function() {

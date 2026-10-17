@@ -60,7 +60,59 @@
   /* "What comes next" divider: same rounded-bar shape as "What went wrong", keep its color */
   .tick-pattern.tick-pattern-next { background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='33' height='12'%3E%3Crect width='25' height='12' fill='%23EBD6C5' rx='2'/%3E%3C/svg%3E") !important; background-size: 24px 12px !important; }
   @media (min-width: 860px) { .tick-pattern.tick-pattern-next { background-size: 33px 12px !important; } }
-</style>
+    /* Hero: vertically center the H1 on the photo beside it (photo = half-width column at 3:2). */
+    @media (min-width: 860px) { .hero-text-col { padding-top: max(0px, calc((100vw - 64px) / 6 - 124px)) !important; } .hero-photo-col { margin-top: calc(max(0px, calc((100vw - 64px) / 6 - 124px)) + 4px); } }
+    @media (min-width: 1280px) { .hero-text-col { padding-top: max(0px, calc((100vw - 64px) / 6 - 159px)) !important; } .hero-photo-col { margin-top: calc(max(0px, calc((100vw - 64px) / 6 - 159px)) + 6px); } }
+    .hero-school-img { display:block; height:260px; width:100%; max-width:100%; object-fit:cover; object-position:18% 22%; transform-origin:center; transform:scale(2.15) translate(18%,11%); }
+    @media (min-width: 860px) { .hero-school-img { aspect-ratio:3/2; height:auto; max-height:683px; object-position:40% center; transform:none; } }
+    .hero-photo-caption { font-size: 13px; line-height: 1.45; color: #5a6880; margin: 8px 40px 0; }
+    @media (min-width: 860px) { .hero-photo-caption { margin: 10px 60px 0 0; } }
+    /* Desktop: tighter gap between hero and The Record (photo unchanged) */
+    @media (min-width: 860px) { #page-hero .hero-text-col { padding-bottom: 56px !important; } #the-record { padding-top: 96px !important; } }
+    /* Desktop: hero buttons side by side where they fit */
+    @media (min-width: 1360px) {
+      #page-hero .hero-body + div { flex-wrap: nowrap; }
+      #page-hero .hero-body + div a { width: auto; flex: none; padding-left: 20px; padding-right: 20px; letter-spacing: .15em; }
+    }
+    /* Hero heading restored to original scale (pre night-lights) */
+    .hero-h1 { font-size: 42px; line-height: 1.1; }
+    @media (min-width: 860px) { .hero-h1 { font-size: 72px; line-height: 1.15; } .hero-body { font-size: 22px; line-height: 33px; } }
+    @media (min-width: 1280px) { .hero-h1 { font-size: 92px; line-height: 106px; } }
+    /* Keep "Built to End." on one line at every laptop width */
+    @media (min-width: 860px) { .hero-h1 { font-size: clamp(44px, calc((50vw - 166px) / 5.9), 72px); } }
+    @media (min-width: 1280px) { .hero-h1 { font-size: clamp(60px, calc((50vw - 166px) / 5.9), 92px); } }
+    /* Friedman pull quote in The Diagnosis */
+    .diag-top { flex-wrap: wrap; }
+    .friedman-quote { margin: 8px 0 0; display: flex; gap: 20px; align-items: stretch; flex: 1 1 100%; max-width: 560px; }
+    .friedman-quote__photo { flex: none; width: 128px; position: relative; overflow: hidden; }
+    .friedman-quote__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; display: block; }
+    .friedman-quote__body { border-top: 3px solid #b8682a; padding-top: 12px; min-width: 0; }
+    .friedman-quote blockquote { margin: 0; font-family: Newsreader, Georgia, serif; font-style: italic; font-size: 21px; line-height: 1.4; color: #1c2e4a; }
+    .friedman-quote figcaption { margin-top: 12px; margin-bottom: -4px; display: flex; flex-direction: column; gap: 2px; }
+    .friedman-quote__name { white-space: nowrap; font-family: Newsreader, Georgia, serif; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: #b8682a; }
+    .friedman-quote__src { font-size: 15px; color: #4a5a72; }
+    @media (min-width: 860px) { .friedman-quote__name { font-size: 14px; letter-spacing: .14em; } .friedman-quote { max-width: 440px; gap: 24px; } .friedman-quote__photo { width: 182px; } .friedman-quote blockquote { font-size: 23px; } }
+    @media (min-width: 1360px) { .diag-top > div:first-child { flex: 1 1 0; } .diag-top > div:first-child p br { display: none; } .diag-top > div:first-child p { max-width: 700px; } .friedman-quote { flex: 0 0 430px; margin: 40px 0 0 auto; } }
+    /* India night-lights band */
+    .india-band { background: #0a1220; color: #fff; padding: 72px 40px 56px; }
+    .india-band__inner { max-width: 1192px; margin: 0 auto; }
+    .india-band__eyebrow { color: #e8b27a !important; }
+    .india-band__heading { color: #fff; margin: 10px 0 32px; max-width: 760px; text-wrap: balance; }
+    .india-band__pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 0 -24px; max-width: 1020px; }
+    .india-band__pair figure { margin: 0; }
+    .india-band__pair img { display: block; width: 100%; height: auto; }
+    .india-band__pair figcaption { font-family: Newsreader, Georgia, serif; font-size: 15px; color: rgba(255,255,255,.85); margin-top: 10px; padding-left: 24px; }
+    @media (max-width: 389px) { .india-band__pair figcaption { font-size: 14px; padding-left: 16px; } }
+    @media (min-width: 860px) { .india-band__pair figcaption { padding-left: 0; } }
+    .india-band__credit { font-size: 13px; color: rgba(255,255,255,.6); margin-top: 20px; }
+    .india-band__credit a { color: rgba(255,255,255,.75); text-decoration: underline; text-underline-offset: 2px; }
+    @media (min-width: 860px) {
+      .india-band { padding: 120px 124px 96px; }
+      .india-band__pair { gap: 64px; margin: 0 auto; }
+      .india-band__credit { max-width: 980px; margin-left: auto; margin-right: auto; }
+      .india-band__pair figcaption { font-size: 18px; }
+    }
+  </style>
 </head>
 <body class="font-newsreader">
 
@@ -117,7 +169,7 @@
         <span class="block">Effective.</span>
         <span class="block text-amber">Built to End.</span>
       </h1>
-      <div class="flex flex-col gap-4 text-lg leading-[1.5] text-ink tablet:text-xl tablet:leading-[1.5]">
+      <div class="hero-body flex flex-col gap-5 text-lg leading-[1.5] text-ink">
         <p>Since 1961 USAID was America&#39;s premier foreign assistance agency. Its successes were real; so were its failures.</p>
         <p>For those of us who support foreign assistance, it is tempting to bring back what USAID was. That&#39;s not good enough.</p>
         <p>It&#39;s time for what comes next. The New Foreign Assistance is the conservative voice for reform.</p>
@@ -129,9 +181,10 @@
     </div>
     <aside class="hero-media-track order-1 min-w-0 tablet:sticky tablet:top-[12.5rem] tablet:order-2 tablet:self-start">
       <div class="hero-media relative overflow-hidden">
-        <img src="images/hero-school.webp" alt="Schoolchildren holding flags outdoors" class="hero-school-img" width="1024" height="683" fetchpriority="high">
+        <img src="images/hero-school.webp" alt="Girls with U.S. and Kenyan flags waiting to greet the U.S. ambassador at a PEPFAR girls' empowerment project in Nairobi" class="hero-school-img" width="1024" height="683" fetchpriority="high">
         <img src="images/decor-bars-hero.svg" alt="" aria-hidden="true" width="180" height="96" class="pointer-events-none absolute bottom-0 right-0 hidden tablet:block" style="width:180px;height:96px;max-width:none">
       </div>
+      <p class="hero-photo-caption">Girls in Nairobi wait to greet the U.S. ambassador at a PEPFAR girls&#39; empowerment project, 2018. Photo: Jonathan Ernst/Reuters</p>
     </aside>
   </div>
 </section>
@@ -180,7 +233,7 @@
       <article class="grid items-center gap-6 border-t border-ink/20 py-8 pb-12 tablet:col-span-3 tablet:grid-cols-subgrid tablet:gap-x-[50px] tablet:px-9 tablet:py-[30px]">
         <div class="min-w-0">
           <p class="font-newsreader text-[36px] font-medium leading-none text-ink tablet:text-[42px]">$17 in benefits</p>
-          <p class="mt-2 text-lg text-amber tablet:text-xl">In benefits per dollar invested</p>
+          <p class="mt-2 text-lg text-amber tablet:text-xl">Per dollar invested</p>
         </div>
         <p class="min-w-0 text-lg leading-[1.5] text-ink tablet:text-xl tablet:leading-[30px]">Development Innovation Ventures funded evidence-backed solutions and let results speak.</p>
         <div class="grid min-w-0 gap-2 tablet:max-w-[412px]">
@@ -194,8 +247,8 @@
 
       <div class="grid border-t border-toc-rail/70 pt-8 tablet:col-span-3 tablet:grid-cols-subgrid">
         <div class="flex flex-col gap-5 text-lg leading-[1.55] text-ink tablet:col-span-2 tablet:pl-9 tablet:text-xl">
-          <p class="text-[28px] font-medium">These three programs don&#39;t capture everything.</p>
-          <p>The Millennium Challenge Corporation pioneered conditional aid that rewarded country reform. Feed the Future lifted 23.4 million people out of poverty through agriculture-led growth. Prosper Africa, launched under the first Trump administration, mobilized American private capital across the continent. The Higher Education Solutions Network put America&#39;s top universities on the hardest development questions.</p>
+          <p class="balance-wrap text-[28px] font-medium">These three programs don&#39;t capture&nbsp;everything.</p>
+          <p>The <strong class="font-semibold">Millennium Challenge Corporation</strong> pioneered conditional aid that rewarded country reform. <strong class="font-semibold">Feed the Future</strong> lifted 23.4 million people out of poverty through agriculture-led growth. <strong class="font-semibold">Prosper Africa</strong>, launched under the first Trump administration, mobilized American private capital across the continent. The <strong class="font-semibold">Higher Education Solutions Network</strong> put America&#39;s top universities on the hardest development questions.</p>
           <p>When American foreign assistance has been focused and bipartisan, it has changed outcomes at scale.</p>
         </div>
       </div>
@@ -211,7 +264,7 @@
   <!-- Desktop: Diagnosis side accent -->
   <img src="images/decor-bars-diagnosis.svg" alt="" aria-hidden="true" width="90" height="296" class="pointer-events-none absolute left-0 top-[147px] hidden tablet:block" style="width:90px;height:296px;max-width:none">
   <div class="mx-auto flex flex-col gap-10 tablet:gap-[134px] fade-up">
-    <div class="flex items-start gap-5 tablet:gap-8">
+    <div class="diag-top flex items-start gap-5 tablet:gap-8">
       <div class="flex min-w-0 flex-col gap-5">
         <p class="eyebrow">The Diagnosis</p>
         <h2 class="display-heading">
@@ -220,6 +273,13 @@
         </h2>
         <p class="tablet:max-w-4xl text-lg leading-[1.5] text-ink tablet:text-[22px] tablet:leading-[33px]">USAID&#39;s failures were not about its people or its mission. They were about the slow accretion<br class="hidden tablet:inline"> of rules, mandates, and reporting requirements that, over decades, crowded out the work of<br class="hidden tablet:inline"> development. Each well-meaning reform added a layer…nothing was ever&nbsp;removed.</p>
       </div>
+      <figure class="friedman-quote">
+        <div class="friedman-quote__photo"><img src="images/friedman-tall-260.webp" srcset="images/friedman-tall-260.webp 260w, images/friedman-tall-520.webp 520w" sizes="(min-width: 860px) 182px, 128px" alt="Milton Friedman" width="260" height="455" loading="lazy" decoding="async"></div>
+        <div class="friedman-quote__body">
+          <blockquote>&ldquo;One of the great mistakes is to judge policies and programs by their intentions rather than their results.&rdquo;</blockquote>
+          <figcaption><span class="friedman-quote__name">Milton Friedman</span><span class="friedman-quote__src"><em>The Open Mind</em>, 1975</span></figcaption>
+        </div>
+      </figure>
     </div>
 
     <div class="grid gap-10 tablet:grid-cols-2 tablet:gap-16 tablet:px-15">
@@ -251,28 +311,30 @@
   </div>
 </section>
 
-<!-- INDIA, 1992 / 2026 — moved out of the hero (BugHerd #27) -->
-<section class="india-section px-0 pt-[90px] min-[640px]:px-10 tablet:px-[124px] tablet:pt-[147px]" id="india" aria-label="India at night, 1992 and 2026">
-  <div class="india-media mx-auto fade-up">
-    <div class="india-pair">
-      <figure class="india-pair__panel">
+<!-- INDIA NIGHT LIGHTS -->
+<section class="india-band" id="india-night-lights" aria-labelledby="india-band-heading">
+  <div class="india-band__inner fade-up">
+    <p class="eyebrow india-band__eyebrow">The Evidence</p>
+    <h2 id="india-band-heading" class="display-heading india-band__heading">What opening an economy looks like from space.</h2>
+    <div class="india-band__pair">
+      <figure>
         <picture>
-          <source type="image/avif" srcset="images/india-1992-480.avif 480w, images/india-1992-800.avif 800w, images/india-1992-1306.avif 1306w" sizes="(min-width: 1008px) 373px, (min-width: 860px) 36vw, (max-width: 359px) 100vw, (max-width: 639px) 50vw, 255px">
-          <source type="image/webp" srcset="images/india-1992-480.webp 480w, images/india-1992-1306.webp 1306w" sizes="(min-width: 1008px) 373px, (min-width: 860px) 36vw, (max-width: 359px) 100vw, (max-width: 639px) 50vw, 255px">
-          <img src="images/india-1992-1306.webp" alt="Satellite night lights over India in 1992" width="1306" height="1400" loading="lazy" decoding="async">
+          <source type="image/avif" srcset="images/india-nl-1992-480.avif 480w, images/india-nl-1992-800.avif 800w, images/india-nl-1992-1306.avif 1306w" sizes="(min-width: 1200px) 520px, (min-width: 860px) 42vw, 46vw">
+          <source type="image/webp" srcset="images/india-nl-1992-480.webp 480w, images/india-nl-1992-800.webp 800w, images/india-nl-1992-1306.webp 1306w" sizes="(min-width: 1200px) 520px, (min-width: 860px) 42vw, 46vw">
+          <img src="images/india-nl-1992-800.webp" alt="Satellite night lights over India in 1992: scattered points of light, mostly dark" width="1306" height="1400" loading="lazy" decoding="async">
         </picture>
-        <figcaption>India, 1992. The end of the License Raj.</figcaption>
+        <figcaption>India, 1992, at the end of the License Raj</figcaption>
       </figure>
-      <figure class="india-pair__panel">
+      <figure>
         <picture>
-          <source type="image/avif" srcset="images/india-2026-480.avif 480w, images/india-2026-800.avif 800w, images/india-2026-1306.avif 1306w" sizes="(min-width: 1008px) 373px, (min-width: 860px) 36vw, (max-width: 359px) 100vw, (max-width: 639px) 50vw, 255px">
-          <source type="image/webp" srcset="images/india-2026-480.webp 480w, images/india-2026-800.webp 800w, images/india-2026-1306.webp 1306w" sizes="(min-width: 1008px) 373px, (min-width: 860px) 36vw, (max-width: 359px) 100vw, (max-width: 639px) 50vw, 255px">
-          <img src="images/india-2026-800.webp" alt="Satellite night lights over India in 2026" width="1306" height="1400" loading="lazy" decoding="async">
+          <source type="image/avif" srcset="images/india-nl-2023-480.avif 480w, images/india-nl-2023-800.avif 800w, images/india-nl-2023-1306.avif 1306w" sizes="(min-width: 1200px) 520px, (min-width: 860px) 42vw, 46vw">
+          <source type="image/webp" srcset="images/india-nl-2023-480.webp 480w, images/india-nl-2023-800.webp 800w, images/india-nl-2023-1306.webp 1306w" sizes="(min-width: 1200px) 520px, (min-width: 860px) 42vw, 46vw">
+          <img src="images/india-nl-2023-800.webp" alt="Satellite night lights over India in 2023: cities and highways lit across the country" width="1306" height="1400" loading="lazy" decoding="async">
         </picture>
-        <figcaption>India, 2026. The fruits of liberalization.</figcaption>
+        <figcaption>India, 2023</figcaption>
       </figure>
     </div>
-    <p class="india-credit"><a href="https://svs.gsfc.nasa.gov/5276/" target="_blank" rel="noopener">Night lights: NASA Scientific Visualization Studio</a></p>
+    <p class="india-band__credit">Night lights: <a href="https://doi.org/10.1038/s41597-024-04228-6" target="_blank" rel="noopener">Chen et al. (2024), <em>Scientific Data</em></a>. Same scale both years.</p>
   </div>
 </section>
 
