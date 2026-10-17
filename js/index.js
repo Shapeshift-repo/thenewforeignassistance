@@ -73,7 +73,7 @@ const observer = new IntersectionObserver(entries => {
       observer.unobserve(el.target);
     }
   });
-}, { threshold: 0.07 });
+}, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
 function initGrowthChart() {

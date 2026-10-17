@@ -129,17 +129,21 @@ for (const vp of viewports) {
         await expect(heroTrack).toHaveCSS('position', 'sticky');
       }
 
-      // --- India pair (BugHerd #19), now below The Diagnosis and above Reformed Approach (BugHerd #27) ---
-      const india = page.locator('#india');
-      await expect(india.getByRole('figure').filter({ hasText: 'India, 1992. The end of the License Raj.' })).toBeVisible();
-      await expect(india.getByRole('figure').filter({ hasText: 'India, 2026. The fruits of liberalization.' })).toBeVisible();
-      await expect(india.locator('a[href="https://svs.gsfc.nasa.gov/5276/"]')).toBeVisible();
+      // --- India night-lights band (main), below The Diagnosis and above Reformed Approach ---
+      const india = page.locator('#india-night-lights');
+      await expect(india.getByRole('heading', { name: 'What opening an economy looks like from space.' })).toBeVisible();
+      await expect(india.getByRole('figure').filter({ hasText: 'India, 1992, at the end of the License Raj' })).toBeVisible();
+      await expect(india.getByRole('figure').filter({ hasText: 'India, 2023' })).toBeVisible();
+      await expect(india.locator('a[href="https://doi.org/10.1038/s41597-024-04228-6"]')).toBeVisible();
       const sectionOrder = await page.locator('body > section').evaluateAll((els) => els.map((el) => el.id));
-      expect(sectionOrder.indexOf('india'), `section order: ${sectionOrder.join(',')}`).toBe(
+      expect(sectionOrder.indexOf('india-night-lights'), `section order: ${sectionOrder.join(',')}`).toBe(
         sectionOrder.indexOf('the-diagnosis') + 1,
       );
-      expect(sectionOrder.indexOf('principles')).toBe(sectionOrder.indexOf('india') + 1);
-      await assertWithinParent(india.locator('.india-pair'), india);
+      expect(sectionOrder.indexOf('principles')).toBe(sectionOrder.indexOf('india-night-lights') + 1);
+      await assertWithinParent(india.locator('.india-band__pair'), india);
+
+      // --- Hero PEPFAR caption (bucket B) ---
+      await expect(page.locator('#page-hero .hero-photo-caption')).toContainText('PEPFAR');
 
       // --- Devex banner (BugHerd #18): one link, whole banner, no UNGA ---
       const banner = page.locator('a.unga-banner');

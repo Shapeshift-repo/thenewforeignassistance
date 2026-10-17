@@ -140,80 +140,7 @@
       width: 614px;
     }
   }
-  /* India 1992 / 2026 night-lights pair: its own band between The Diagnosis and Reformed Approach (BugHerd #27). */
-  .india-pair {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    align-items: start;
-  }
-  @media (min-width: 640px) and (max-width: 859px) {
-    .india-media {
-      max-width: 520px;
-    }
-  }
-  @media (min-width: 860px) {
-    .india-media {
-      max-width: 760px;
-    }
-    .india-pair {
-      gap: 14px;
-    }
-  }
-  @media (max-width: 359px) {
-    .india-pair {
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-  }
-  .india-pair__panel {
-    margin: 0;
-    min-width: 0;
-  }
-  .india-pair img {
-    display: block;
-    width: 100%;
-    height: auto;
-    background: #070b16;
-  }
-  .india-pair figcaption {
-    margin-top: 8px;
-    font-family: Newsreader, Georgia, serif;
-    font-size: 13px;
-    line-height: 1.35;
-    color: #1c2e4a;
-  }
-  @media (min-width: 860px) {
-    .india-pair figcaption {
-      font-size: 15px;
-    }
-  }
-  .india-credit {
-    @apply m-0 mt-2.5 font-newsreader text-xs leading-snug text-ink/70;
-  }
-  .india-credit a {
-    @apply text-inherit underline decoration-ink/30 underline-offset-2 hover:text-amber hover:decoration-amber;
-  }
-  /* The photos run full-bleed on phones; keep the captions and credit off the screen edge (BugHerd #25). */
-  @media (max-width: 639px) {
-    .india-pair__panel:first-child figcaption,
-    .india-credit {
-      padding-left: 20px;
-    }
-    .india-pair__panel:last-child figcaption,
-    .india-credit {
-      padding-right: 20px;
-    }
-  }
-  @media (max-width: 359px) {
-    .india-pair figcaption {
-      padding-inline: 20px;
-    }
-  }
-  .india-credit a:focus-visible {
-    outline: 2px solid #b8682a;
-    outline-offset: 2px;
-  }
+  /* India night-lights band styles live in index.html (main india-band). Hero caption: index.html inline. */
   .btn-filled {
     @apply inline-flex h-[55px] items-center justify-center border border-amber bg-amber px-8 font-libertinus text-base text-nowrap tablet:max-w-[282px] uppercase tracking-nav text-white transition-opacity hover:opacity-90;
   }
@@ -432,3 +359,8 @@
     }
   }
 }
+
+/* Banner: larger, centered text (all pages) */
+.unga-banner__inner{justify-content:center;text-align:center}
+.unga-banner__title{font-size:1.0625rem;line-height:1.4}
+@media (min-width:860px){.unga-banner__title{font-size:1.1875rem}}
