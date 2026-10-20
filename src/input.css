@@ -111,13 +111,20 @@
     transform-origin: center;
     transform: scale(2.15) translate(18%, 11%);
   }
+  .hero-photo-caption {
+    max-width: 100%;
+  }
   @media (min-width: 860px) {
     .hero-grid {
-      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 44vw);
       align-items: start;
       padding-right: 32px;
     }
     /* Same sticky pattern as #principles aside (BugHerd #28): pin while the text column scrolls. */
+    .hero-media-track {
+      min-width: 0;
+      max-width: 44vw;
+    }
     .hero-media {
       width: 44vw;
     }
@@ -128,13 +135,23 @@
     }
   }
   @media (min-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 46vw);
+    }
+    .hero-media-track {
+      max-width: 46vw;
+    }
     .hero-media {
       width: 46vw;
     }
   }
   @media (min-width: 1280px) {
     .hero-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 614px);
       padding-right: 60px;
+    }
+    .hero-media-track {
+      max-width: 614px;
     }
     .hero-media {
       width: 614px;
