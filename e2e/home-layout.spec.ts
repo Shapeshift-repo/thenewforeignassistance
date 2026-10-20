@@ -143,7 +143,17 @@ for (const vp of viewports) {
       await assertWithinParent(india.locator('.india-band__pair'), india);
 
       // --- Hero PEPFAR caption (bucket B) ---
-      await expect(page.locator('#page-hero .hero-photo-caption')).toContainText('PEPFAR');
+      const heroCaption = page.locator('#page-hero .hero-photo-caption');
+      await expect(heroCaption).toContainText('PEPFAR');
+      if (isTablet(vp.width)) {
+        const heroMedia = page.locator('#page-hero .hero-media');
+        const mediaBox = await getBox(heroMedia);
+        const captionBox = await getBox(heroCaption);
+        expect(
+          captionBox.width,
+          `caption width ${captionBox.width} should not exceed hero-media ${mediaBox.width}`,
+        ).toBeLessThanOrEqual(mediaBox.width + 2);
+      }
 
       // --- Devex banner (BugHerd #18): one link, whole banner, no UNGA ---
       const banner = page.locator('a.unga-banner');

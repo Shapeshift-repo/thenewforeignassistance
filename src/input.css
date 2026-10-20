@@ -111,8 +111,11 @@
     transform-origin: center;
     transform: scale(2.15) translate(18%, 11%);
   }
+  .hero-media-track {
+    @apply flex min-w-0 flex-col items-stretch;
+  }
   .hero-photo-caption {
-    max-width: 100%;
+    @apply box-border block max-w-full;
   }
   @media (min-width: 860px) {
     .hero-grid {
